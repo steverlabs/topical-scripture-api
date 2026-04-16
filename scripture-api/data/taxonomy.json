@@ -12,6 +12,40 @@
         "I feel paralyzed by what might happen",
         "constant dread and stress"
       ],
+      "topic_variants": [
+        {
+          "id": "circumstantial_anxiety",
+          "label": "Circumstantial Anxiety",
+          "description": "Worry tied to a specific, nameable situation — job loss, financial pressure, health concerns, relational conflict. The trigger is identifiable and external. Matthew 6:25-34 speaks most directly to this, addressing provision and the Father's knowledge of specific needs.",
+          "intent_signals": [
+            "losing my job",
+            "worried about money",
+            "health scare",
+            "relationship falling apart",
+            "afraid of what will happen with",
+            "specific thing I'm scared of",
+            "can't afford",
+            "test results",
+            "my marriage"
+          ]
+        },
+        {
+          "id": "existential_anxiety",
+          "label": "Existential Anxiety",
+          "description": "Pervasive dread that is harder to pin on one cause — anxiety about mortality, meaning, the future broadly, or whether things will ever be okay. Often undifferentiated, felt as a background hum rather than a specific fear. Philippians 4:6-7 and Psalm 46 speak most directly to this.",
+          "intent_signals": [
+            "can't stop worrying but don't know why",
+            "constant dread",
+            "everything feels uncertain",
+            "nothing feels safe",
+            "what's the point",
+            "afraid of death",
+            "life feels meaningless",
+            "overwhelming sense of doom",
+            "anxious about everything"
+          ]
+        }
+      ],
       "passages": [
         {
           "reference": "Philippians 4:6-7",
@@ -54,6 +88,42 @@
         "how do I deal with death",
         "I feel completely broken",
         "nothing will ever be the same again"
+      ],
+      "topic_variants": [
+        {
+          "id": "acute_grief",
+          "label": "Acute Grief",
+          "description": "Fresh, recent loss — death, divorce, sudden rupture. Raw, disorienting, not yet processed. The person often cannot imagine how to move forward. John 11:32-36 and Psalm 34:18 are the primary anchors: Jesus entering into immediate grief, and the promise of divine nearness to the newly brokenhearted.",
+          "intent_signals": [
+            "just died",
+            "passed away recently",
+            "just happened",
+            "this week",
+            "last month",
+            "still in shock",
+            "don't know how to cope",
+            "can't believe they're gone",
+            "just lost",
+            "funeral"
+          ]
+        },
+        {
+          "id": "prolonged_grief",
+          "label": "Prolonged Grief",
+          "description": "Grief that persists over time, or that the person feels stuck in — often accompanied by guilt about not having 'moved on,' recurring waves of sorrow, or the sense that the loss keeps reasserting itself. Psalm 22:1-5 (sustained lament) and Romans 8:38-39 (eschatological anchoring) are particularly relevant here.",
+          "intent_signals": [
+            "still grieving",
+            "years later",
+            "can't move on",
+            "should be over it by now",
+            "grief keeps coming back",
+            "stuck in grief",
+            "anniversary",
+            "thought I was healed but",
+            "won't go away",
+            "long time ago but still"
+          ]
+        }
       ],
       "passages": [
         {
@@ -98,6 +168,42 @@
         "I have so many questions about Christianity",
         "I feel like God isn't real",
         "what if I'm wrong about all of this"
+      ],
+      "topic_variants": [
+        {
+          "id": "intellectual_doubt",
+          "label": "Intellectual Doubt",
+          "description": "Questioning whether God exists or Christianity is true, driven by reason, evidence, philosophy, or science. The person wants arguments, not just comfort — they need to know if there is a basis for belief. John 20:24-29 (Thomas demanding evidence) and Psalm 73 (wrestling with theodicy) are most relevant.",
+          "intent_signals": [
+            "no evidence for God",
+            "science disproves",
+            "can't believe without proof",
+            "problem of evil",
+            "how do you know God exists",
+            "Christianity doesn't make sense",
+            "logical problems with faith",
+            "evolution",
+            "what about suffering as proof there's no God",
+            "I need reasons to believe"
+          ]
+        },
+        {
+          "id": "existential_doubt",
+          "label": "Existential Doubt",
+          "description": "Belief is present or assumed, but God feels absent, silent, or distant — often triggered by suffering, unanswered prayer, or extended spiritual dryness. The person is not primarily asking 'does God exist?' but 'where is God right now?' Mark 9:24 ('help my unbelief') and Psalm 22 speak most directly to this.",
+          "intent_signals": [
+            "God feels far away",
+            "God isn't listening",
+            "prayers aren't answered",
+            "feel abandoned by God",
+            "God seems silent",
+            "used to feel close to God",
+            "spiritual dryness",
+            "why would God let this happen",
+            "God doesn't seem to care",
+            "can't feel God anymore"
+          ]
+        }
       ],
       "passages": [
         {

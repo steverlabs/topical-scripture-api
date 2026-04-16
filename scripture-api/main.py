@@ -36,6 +36,8 @@ class PassageOut(BaseModel):
 class TopicOut(BaseModel):
     id: str
     name: str
+    variant_id: Optional[str] = None
+    variant_label: Optional[str] = None
     passages: list[PassageOut]
     caution_flags: list[str]
     editorial_notes: str
@@ -103,6 +105,20 @@ def _generate_framing(user_input: str, reference: str, text: str, rationale: str
 
 
 # ---------------------------------------------------------------------------
+# Helpers
+# ---------------------------------------------------------------------------
+
+def _resolve_variant(topic: dict, variant_id: Optional[str]) -> tuple[Optional[str], Optional[str]]:
+    """Return (variant_id, variant_label) for a topic, or (None, None) if not found."""
+    if not variant_id:
+        return None, None
+    for v in topic.get("topic_variants", []):
+        if v["id"] == variant_id:
+            return v["id"], v["label"]
+    return None, None
+
+
+# ---------------------------------------------------------------------------
 # Endpoints
 # ---------------------------------------------------------------------------
 
@@ -114,9 +130,9 @@ def health():
 @app.post("/query", response_model=QueryResponse)
 async def query(req: QueryRequest):
     # 1. Classify intent (blocking → thread)
-    topic_ids: list[str] = await asyncio.to_thread(classify_intent, req.input)
+    classifications: list[dict] = await asyncio.to_thread(classify_intent, req.input)
 
-    if not topic_ids:
+    if not classifications:
         return QueryResponse(
             input=req.input,
             topics=[],
@@ -126,13 +142,25 @@ async def query(req: QueryRequest):
     # 2. Resolve topics from taxonomy
     taxonomy = load_taxonomy()
     topic_map = {t["id"]: t for t in taxonomy["topics"]}
-    matched = [topic_map[tid] for tid in topic_ids[: req.max_topics] if tid in topic_map]
+
+    matched = []  # list of (topic_dict, variant_id)
+    for cls in classifications[: req.max_topics]:
+        topic = topic_map.get(cls["topic_id"])
+        if topic:
+            matched.append((topic, cls.get("variant_id")))
+
+    if not matched:
+        return QueryResponse(
+            input=req.input,
+            topics=[],
+            message="No matching topics found.",
+        )
 
     # 3. Collect primary passages across all matched topics, then fetch in parallel
-    #    Each item: (topic_index, passage_dict)
+    #    Each item: (matched_index, passage_dict)
     to_fetch = [
-        (ti, p)
-        for ti, topic in enumerate(matched)
+        (mi, p)
+        for mi, (topic, _) in enumerate(matched)
         for p in topic["passages"]
         if p["weight"] == "primary"
     ]
@@ -143,8 +171,8 @@ async def query(req: QueryRequest):
 
     # 4. Generate framings for successfully fetched passages in parallel
     framing_tasks = []
-    framing_meta = []  # track which (topic_idx, passage_dict, esv) each task belongs to
-    for (ti, passage), esv in zip(to_fetch, esv_results):
+    framing_meta = []
+    for (mi, passage), esv in zip(to_fetch, esv_results):
         if esv["error"] is None:
             framing_tasks.append(
                 asyncio.to_thread(
@@ -155,14 +183,14 @@ async def query(req: QueryRequest):
                     passage.get("rationale", ""),
                 )
             )
-            framing_meta.append((ti, passage, esv))
+            framing_meta.append((mi, passage, esv))
 
     framings = await asyncio.gather(*framing_tasks)
 
     # 5. Assemble per-topic passage lists
     topic_passages: list[list[PassageOut]] = [[] for _ in matched]
-    for (ti, passage, esv), framing in zip(framing_meta, framings):
-        topic_passages[ti].append(
+    for (mi, passage, esv), framing in zip(framing_meta, framings):
+        topic_passages[mi].append(
             PassageOut(
                 reference=esv["reference"],
                 text=esv["text"],
@@ -174,15 +202,19 @@ async def query(req: QueryRequest):
         )
 
     # 6. Build final response
-    topics_out = [
-        TopicOut(
-            id=topic["id"],
-            name=topic["name"],
-            passages=topic_passages[ti],
-            caution_flags=topic.get("caution_flags", []),
-            editorial_notes=topic.get("editorial_notes", ""),
+    topics_out = []
+    for mi, (topic, variant_id) in enumerate(matched):
+        resolved_variant_id, variant_label = _resolve_variant(topic, variant_id)
+        topics_out.append(
+            TopicOut(
+                id=topic["id"],
+                name=topic["name"],
+                variant_id=resolved_variant_id,
+                variant_label=variant_label,
+                passages=topic_passages[mi],
+                caution_flags=topic.get("caution_flags", []),
+                editorial_notes=topic.get("editorial_notes", ""),
+            )
         )
-        for ti, topic in enumerate(matched)
-    ]
 
     return QueryResponse(input=req.input, topics=topics_out)
