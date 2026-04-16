@@ -1,0 +1,12 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(.venv/Scripts/uvicorn main:app --port 8000)",
+      "Bash(curl -s -X POST http://localhost:8000/query -H 'Content-Type: application/json' -d '{\"input\": \"I cannot stop worrying about losing my job\"}')",
+      "Bash(python -m json.tool)",
+      "Bash(curl -s -X POST http://localhost:8000/query -H 'Content-Type: application/json' -d '{\"input\": \"What is the boiling point of water?\"}')",
+      "Bash(taskkill /F /IM python.exe)",
+      "Bash(.venv/Scripts/python test_query.py)"
+    ]
+  }
+}

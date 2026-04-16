@@ -1,0 +1,135 @@
+{
+  "topics": [
+    {
+      "id": "anxiety",
+      "name": "Anxiety",
+      "cluster": "Emotional Distress",
+      "description": "The experience of worry, fear, or dread about circumstances beyond one's control. Pastorally distinct from clinical anxiety disorder — these passages address the soul's tendency toward anxious striving and invite trust in God's provision and presence.",
+      "intent_examples": [
+        "I can't stop worrying",
+        "I'm overwhelmed with fear about the future",
+        "how do I stop being anxious",
+        "I feel paralyzed by what might happen",
+        "constant dread and stress"
+      ],
+      "passages": [
+        {
+          "reference": "Philippians 4:6-7",
+          "weight": "primary",
+          "rationale": "Paul's direct pastoral instruction to bring anxious thoughts to God in prayer, with the promise of a peace that transcends understanding as a guard over heart and mind.",
+          "context_note": "Written from prison — Paul's context of genuine suffering gives the command weight; this is not shallow positivity but hard-won counsel."
+        },
+        {
+          "reference": "Matthew 6:25-34",
+          "weight": "primary",
+          "rationale": "Jesus addresses worry about provision (food, clothing, future) directly, grounding relief in the character of the Father and the priority of the Kingdom.",
+          "context_note": "Part of the Sermon on the Mount; 'do not worry' is a command, not a suggestion — but Jesus pairs it with a theological reason, not mere willpower."
+        },
+        {
+          "reference": "1 Peter 5:7",
+          "weight": "supporting",
+          "rationale": "Casts anxiety as something that can be actively given over to God, grounded in the affirmation that God cares personally for the individual.",
+          "context_note": "The Greek word for 'cast' (epiripsantes) implies a deliberate, forceful act — not passive resignation but an act of entrusting."
+        },
+        {
+          "reference": "Psalm 46:1-3",
+          "weight": "supporting",
+          "rationale": "Describes God as a present refuge even when the world feels like it is falling apart — meets anxiety about catastrophic circumstances with imagery of divine stability.",
+          "context_note": "The psalm acknowledges real upheaval ('though the earth gives way') before asserting confidence — it does not minimize the threat."
+        }
+      ],
+      "caution_flags": [
+        "Distinguish soul-care from clinical treatment — for persistent anxiety disorders, Scripture is a companion to professional care, not a replacement."
+      ],
+      "editorial_notes": "Philippians 4:6-7 and Matthew 6:25-34 are the two anchors; the supporting passages extend the theme of active trust rather than merely repeating the same note."
+    },
+    {
+      "id": "grief",
+      "name": "Grief",
+      "cluster": "Emotional Distress",
+      "description": "Sorrow arising from loss — death of a loved one, broken relationships, shattered expectations, or cumulative disappointment. Scripture validates lament as a faithful response and points toward the God who enters into grief rather than standing apart from it.",
+      "intent_examples": [
+        "I lost someone I love",
+        "I can't stop crying and I don't know why",
+        "how do I deal with death",
+        "I feel completely broken",
+        "nothing will ever be the same again"
+      ],
+      "passages": [
+        {
+          "reference": "John 11:32-36",
+          "weight": "primary",
+          "rationale": "Jesus weeps at the tomb of Lazarus even knowing he will raise him — the shortest verse in Scripture ('Jesus wept') carries enormous pastoral weight as evidence that God is not unmoved by human grief.",
+          "context_note": "Read in context: Mary's words in v.32 ('if you had been here') and the crowd's grief (v.33) show Jesus entering into real mourning, not performing it. He weeps with those who weep."
+        },
+        {
+          "reference": "Psalm 34:18",
+          "weight": "primary",
+          "rationale": "A direct promise of God's nearness to those who are brokenhearted and crushed in spirit — meets grief with assurance of divine presence, not an explanation or a fix.",
+          "context_note": "Psalm 34 is an acrostic of praise, making this verse's tenderness more striking — grief and praise coexist in the same poem."
+        },
+        {
+          "reference": "Psalm 22:1-5",
+          "weight": "supporting",
+          "rationale": "Models honest lament — the psalmist cries out 'My God, why have you forsaken me?' — giving voice to the experience of divine absence without abandoning faith. Particularly valuable when grief feels like spiritual abandonment.",
+          "context_note": "Jesus quotes this psalm from the cross (Matt 27:46), canonically linking human grief to the suffering of Christ."
+        },
+        {
+          "reference": "Romans 8:38-39",
+          "weight": "supporting",
+          "rationale": "Grounds the grieving person in the unbreakable love of God — no loss, no death, no depth of sorrow can sever that bond. Offers eschatological comfort without minimizing present pain.",
+          "context_note": "Best offered after space has been given for lament; can feel dismissive if introduced too quickly."
+        }
+      ],
+      "caution_flags": [
+        "Avoid passages that could be read as minimizing grief (e.g., 'all things work together for good' in isolation); pair with lament passages first.",
+        "Be attentive to whether grief is complicated by guilt or estrangement — the pastoral need may differ significantly."
+      ],
+      "editorial_notes": "John 11:35 is best referenced with its surrounding context (vv.32-36) to preserve the full picture of Jesus entering into grief. The lament psalms are essential companions here."
+    },
+    {
+      "id": "doubt",
+      "name": "Doubt",
+      "cluster": "Faith & Belief",
+      "description": "Intellectual or existential uncertainty about God, faith, or Scripture — ranging from honest questions to a crisis of belief. Scripture treats doubt as a recurring experience of genuine faith rather than its opposite, and several key narratives model honest struggle leading to deeper trust.",
+      "intent_examples": [
+        "I'm not sure I believe anymore",
+        "how do I have faith when I can't see God",
+        "I have so many questions about Christianity",
+        "I feel like God isn't real",
+        "what if I'm wrong about all of this"
+      ],
+      "passages": [
+        {
+          "reference": "John 20:24-29",
+          "weight": "primary",
+          "rationale": "Thomas's refusal to believe without evidence, and Jesus's response — not rebuke but invitation to touch and see — models that Jesus meets doubt with presence and evidence rather than condemnation.",
+          "context_note": "The final beatitude ('blessed are those who have not seen and yet have believed', v.29) should not be read as a rebuke of Thomas but as an encouragement for future believers; Jesus still appeared to Thomas."
+        },
+        {
+          "reference": "Mark 9:24",
+          "weight": "primary",
+          "rationale": "'I believe; help my unbelief!' — one of the most honest prayers in Scripture, spoken by a father asking for his son's healing. Validates mixed faith (belief and doubt coexisting) as sufficient to bring to Jesus.",
+          "context_note": "Jesus heals the child in response to this cry — doubt did not disqualify the prayer. Powerful for those who feel their faith is too weak or impure."
+        },
+        {
+          "reference": "Psalm 73:1-17",
+          "weight": "supporting",
+          "rationale": "Asaph's extended honest wrestling with why the wicked prosper — models sustained intellectual and emotional doubt within the psalter, resolved not by argument but by entering the sanctuary and gaining God's perspective.",
+          "context_note": "The resolution (vv.17ff) comes through worship and encounter, not answered questions — important for doubters who are looking for intellectual resolution alone."
+        },
+        {
+          "reference": "Hebrews 11:1",
+          "weight": "supporting",
+          "rationale": "Defines faith as 'confidence in what we hope for, assurance about what we do not see' — acknowledges that faith always involves unseen realities, so doubt is not its absence but its context.",
+          "context_note": "Use carefully — can sound like intellectual bypass if offered without engaging the substance of the doubt."
+        }
+      ],
+      "caution_flags": [
+        "Distinguish intellectual doubt (apologetics may help) from existential doubt rooted in suffering or loss (pastoral care is the primary need).",
+        "Avoid implying that doubt is sinful; the biblical narrative consistently shows God engaging doubters directly."
+      ],
+      "editorial_notes": "Mark 9:24 is often the single most resonant verse for someone experiencing doubt — the raw honesty of the prayer tends to break through defenses. John 20 and Psalm 73 provide the narrative and wisdom-literature counterparts."
+    }
+  ]
+}

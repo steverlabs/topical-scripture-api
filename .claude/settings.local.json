@@ -1,0 +1,12 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(python -m venv .venv)",
+      "Bash(.venv/Scripts/pip install *)",
+      "Bash(.venv/Scripts/python -m uvicorn main:app --port 8000)",
+      "Bash(curl -s http://localhost:8000/health)",
+      "Bash(kill %1)",
+      "Bash(.venv/Scripts/python -c ' *)"
+    ]
+  }
+}
